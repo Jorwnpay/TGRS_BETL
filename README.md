@@ -147,7 +147,7 @@ cd ./tool/
 
 ### Analyze Results
 
-After training BETL via a 10-trail 5-fold cross-validation scheme, by default, you will get y_hat, y_true, and logits results in `"/output/results/{dataset}/{method}/{backbone}/"`, e.g., `"/output/results/KLSG/betl/resnet18/y_hat.txt"`. Then, you can get Gmean, Macro-F1, confusion matrix, and Precision-Recall curves results through:
+After training BETL via a 10-trail 5-fold cross-validation scheme, by default, you will get y_hat, y_true, and logits results in `"/output/result/{dataset}/{method}/{backbone}/"`, e.g., `"/output/result/KLSG/betl/resnet18/y_hat.txt"`. Then, you can get Gmean, Macro-F1, confusion matrix, and Precision-Recall curves results through:
 
 ```shell
 # Demo: analyzing on KLSG, using resnet18 as backbone
