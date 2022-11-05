@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 ### 数据集
 
-我们使用了SeabedObjects-KLSG (KLSG)、long-tailed sonar image dataset (LTSID)和marine-debris-fls-datasets (FLSMDD)数据集来测试BETL。KLSG和FLSMDD数据集可以分别从[Huo's repo](https://github.com/huoguanying/SeabedObjects-Ship-and-Airplane-dataset) and [Valdenegro's repo](https://github.com/mvaldenegro/marine-debris-fls-datasets/releases/tag/watertank-v1.0)下载到。LTSID数据集是从网上收集整理得到的，由于版权问题，暂时不能开源。为了使用者的方便，预先准备好的KLSG和FLSMDD数据集也可以从这个仓库里下载，只需克隆这个仓库并解压data文件夹下的所有`.rar`文件即可。**请注意：**所有这些数据集都是由Huo 和 Valdenegro提供的，我们这里仅仅是方便使用者跳过数据准备的步骤，直接运行代码进行实验。如果您准备在您的工作中使用这些数据集，请您引用他们的文章，并star他们的Github仓库，以对他们的贡献表示感谢。
+我们使用了SeabedObjects-KLSG (KLSG)、long-tailed sonar image dataset (LTSID)和marine-debris-fls-datasets (FLSMDD)数据集来测试BETL。KLSG和FLSMDD数据集可以分别从[Huo's repo](https://github.com/huoguanying/SeabedObjects-Ship-and-Airplane-dataset) and [Valdenegro's repo](https://github.com/mvaldenegro/marine-debris-fls-datasets/releases/tag/watertank-v1.0)下载到。LTSID数据集是从网上收集整理得到的，由于版权问题，暂时不能开源。为了使用者的方便，预先准备好的KLSG和FLSMDD数据集也可以从这个仓库里下载，只需克隆这个仓库并解压data文件夹下的所有`.rar`文件即可。**请注意：** 所有这些数据集都是由Huo 和 Valdenegro提供的，我们这里仅仅是方便使用者跳过数据准备的步骤，直接运行代码进行实验。如果您准备在您的工作中使用这些数据集，请您引用他们的文章，并star他们的Github仓库，以对他们的贡献表示感谢。
 
 ```
 % KLSG dataset is proposed in:
