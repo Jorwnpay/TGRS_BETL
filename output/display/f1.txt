@@ -1,0 +1,2 @@
+[Time: Fri Nov  4 14:38:35 2022] F1 of FLSMDD_betl_resnet18 is : 0.9853724584086316
+[Time: Fri Nov  4 14:39:16 2022] F1 of KLSG_betl_resnet18 is : 0.7976654041260116

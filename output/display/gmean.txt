@@ -1,0 +1,2 @@
+[Time: Fri Nov  4 14:38:35 2022] Gmean of FLSMDD_betl_resnet18 is : 0.9857641361399759
+[Time: Fri Nov  4 14:39:16 2022] Gmean of KLSG_betl_resnet18 is : 0.8188701894053625
