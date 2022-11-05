@@ -2,7 +2,7 @@
 
 This repo shows the source code of IEEE TGRS 2022 article: [**Sonar Images Classification While Facing Long-Tail and Few-Shot**](https://ieeexplore.ieee.org/document/9910166). In this work, we propose a pipeline entitled balanced ensemble transfer learning (BETL), which simultaneously overcomes the long-tail and few-shot problems in sonar image classification tasks. 
 
-<img src=".\img\overview.png" alt="overview" style="zoom:60%;" />
+<img src=".\img\overview.png" alt="overview" style="zoom:30%;" />
 
 ## Running the Experiments
 
