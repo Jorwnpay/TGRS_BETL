@@ -1,0 +1,15 @@
+Click==7.0
+ipython==7.16.1
+matplotlib==3.3.2
+numpy==1.19.4
+opencv_python==4.1.0.25
+Pillow==8.4.0
+tensorboardX==2.4.1
+pretrainedmodels==0.7.4
+scikit_learn==0.24.2
+scipy==1.5.2
+torch==1.9.0
+torchtext==0.10.0
+torchvision==0.10.0
+tqdm==4.55.0
+yacs==0.1.6
