@@ -2,7 +2,7 @@
 code_dir=$1
 dataset=$2
 backbone=$3
-save_results="False"
+save_results="True"
 save_models="False"
 p=0
 while(($p<10))
