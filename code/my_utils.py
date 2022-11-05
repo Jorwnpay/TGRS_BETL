@@ -575,7 +575,7 @@ def write_result_to_file(file_dir, y_hat, y_true, logits=None, p=0, k=0):
     print(f'Write result to file {file_dir} finished!')
 
 '''
-Read y_hat, y_true, logits results to file
+Read y_hat, y_true, logits results from file
     @ file_dir: direction of save folder
     @ p : index of 10-trails
     @ k : index of 5-folds
