@@ -170,7 +170,7 @@ python analyse_result.py --dataset KLSG --method betl --backbone resnet18 --get_
 --show_pic:          "If you want to show confusion matrix or Precision-Recall curves, default is False"
 ```
 
-##  Cite
+##  引用
 
 如果您觉得这份代码对您的研究有帮助，请考虑引用我们：
 
