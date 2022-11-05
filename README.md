@@ -113,7 +113,7 @@ data
 
 ### Training
 
-For training BETL, here is an example for queick start,
+For training BETL, here is an example for quick start,
 
 ```shell
 # Demo: training on KLSG
