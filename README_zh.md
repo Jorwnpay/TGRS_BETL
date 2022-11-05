@@ -147,7 +147,7 @@ cd ./tool/
 
 ### 结果分析
 
-在通过十次五折交叉验证训练完BETL之后，您会得到y_hat, y_true和logits结果，默认存放在`"/output/results/{dataset}/{method}/{backbone}/"`路径下，例如，`"/output/results/KLSG/betl/resnet18/y_hat.txt"`。然后，您可以使用下面的命令来得到Gmean、Macro-F1、混淆矩阵和P-R曲线结果：
+在通过十次五折交叉验证训练完BETL之后，您会得到y_hat, y_true和logits结果，默认存放在`"/output/result/{dataset}/{method}/{backbone}/"`路径下，例如，`"/output/result/KLSG/betl/resnet18/y_hat.txt"`。然后，您可以使用下面的命令来得到Gmean、Macro-F1、混淆矩阵和P-R曲线结果：
 
 ```shell
 # Demo: analyzing on KLSG, using resnet18 as backbone
