@@ -1,6 +1,6 @@
 ## BETL
 
-**[English](https://github.com/Jorwnpay/TGRS_BETL/blob/main/README_zh.md)|简体中文**
+**[English](https://github.com/Jorwnpay/TGRS_BETL/blob/main/README.md)|简体中文**
 
 这个仓库是IEEE TGRS 2022文章： [**Sonar Images Classification While Facing Long-Tail and Few-Shot**](https://ieeexplore.ieee.org/document/9910166) 的实现代码。在本文中，为同时解决声纳图像分类任务中的长尾和小样本问题，我们提出了一个平衡集成迁移学习（BETL）方法。
 
