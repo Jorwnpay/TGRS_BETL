@@ -1,35 +1,35 @@
 ## BETL
 
-**English|[简体中文](https://github.com/Jorwnpay/TGRS_BETL/blob/main/README_zh.md)**
+**[English](https://github.com/Jorwnpay/TGRS_BETL/blob/main/README_zh.md)|简体中文**
 
-This repo shows the source code of IEEE TGRS 2022 article: [**Sonar Images Classification While Facing Long-Tail and Few-Shot**](https://ieeexplore.ieee.org/document/9910166). In this work, we propose a pipeline entitled balanced ensemble transfer learning (BETL), which simultaneously overcomes the long-tail and few-shot problems in sonar image classification tasks. 
+这个仓库是IEEE TGRS 2022文章： [**Sonar Images Classification While Facing Long-Tail and Few-Shot**](https://ieeexplore.ieee.org/document/9910166) 的实现代码。在本文中，为同时解决声纳图像分类任务中的长尾和小样本问题，我们提出了一个平衡集成迁移学习（BETL）方法。
 
 <img src=".\img\overview.png" alt="overview" style="zoom:60%;" />
 
-## Running the Experiments
+## 运行实验
 
-### Main Requirements
+### 主要依赖包
 
 * Python == 3.6.12
 * torch == 1.9.0
 * torchvision == 0.10.0
 * tensorboardX == 2.4.1
 
-You can also install dependencies by
+也可以通过下面的命令安装环境依赖：
 
 ```shell
 pip install -r requirements.txt
 ```
 
-We recommend using anaconda to build your code environments.
+我们推荐使用anaconda来构建您的代码环境.
 
-### Experimental Environments
+### 实验环境
 
-This repository is performed on an Intel Xeon E3-1275 v6 3.8 GHz central processing unit (CPU) with 32-GB RAM and an **NVIDIA GeForce RTX 2080Ti** graphic processing unit (GPU). The operating system is **Ubuntu 20.04**. The CUDA nad CUDNN version is **10.1** and **7.6.5** respectively.
+我们在一台配置了英特尔 Xeon E3-1275 v6 3.8 GHz CPU、32-GB RAM 和 **NVIDIA GeForce RTX 2080Ti** GPU的服务器上对代码进行了实验. 操作系统是 **Ubuntu 20.04**. CUDA 和 CUDNN 的版本分别为 **10.1** 和 **7.6.5**。
 
-### Dataset
+### 数据集
 
-We use SeabedObjects-KLSG (KLSG), long-tailed sonar image dataset (LTSID) and marine-debris-fls-datasets (FLSMDD) to test our BETL. KLSG and FLSMDD can be downloaded from [Huo's repo](https://github.com/huoguanying/SeabedObjects-Ship-and-Airplane-dataset) and [Valdenegro's repo](https://github.com/mvaldenegro/marine-debris-fls-datasets/releases/tag/watertank-v1.0), respectively. And LTSID is collected and sorted from the Internet. Due to copyright issue, LTSID cannot be open source at present. For the users' convenience, the prepared KLSG and FLSMDD can also be downloaded from this repo, just by cloning this repo and uncompressing all the `.rar` files under the data folder. NOTE that all these datasets were provided by Huo and Valdenegro and we just select what we need here. If you are going to use these datasets in your work, please cite their papers and star their repositories.
+我们使用了SeabedObjects-KLSG (KLSG)、long-tailed sonar image dataset (LTSID)和marine-debris-fls-datasets (FLSMDD)数据集来测试BETL。KLSG和FLSMDD数据集可以分别从[Huo's repo](https://github.com/huoguanying/SeabedObjects-Ship-and-Airplane-dataset) and [Valdenegro's repo](https://github.com/mvaldenegro/marine-debris-fls-datasets/releases/tag/watertank-v1.0)下载到。LTSID数据集是从网上收集整理得到的，由于版权问题，暂时不能开源。为了使用者的方便，预先准备好的KLSG和FLSMDD数据集也可以从这个仓库里下载，只需克隆这个仓库并解压data文件夹下的所有`.rar`文件即可。**请注意：**所有这些数据集都是由Huo 和 Valdenegro提供的，我们这里仅仅是方便使用者跳过数据准备的步骤，直接运行代码进行实验。如果您准备在您的工作中使用这些数据集，请您引用他们的文章，并star他们的Github仓库，以对他们的贡献表示感谢。
 
 ```
 % KLSG dataset is proposed in:
@@ -53,11 +53,11 @@ We use SeabedObjects-KLSG (KLSG), long-tailed sonar image dataset (LTSID) and ma
 }
 ```
 
-### Prepare
+### 数据准备
 
-Here is a preparation step if you use the orginal datasets from [Huo's repo](https://github.com/huoguanying/SeabedObjects-Ship-and-Airplane-dataset) and [Valdenegro's repo](https://github.com/mvaldenegro/marine-debris-fls-datasets/releases/tag/watertank-v1.0). Note that if you use the prepared datasets in this repo, just uncompress all the `.rar` files under the data folder and **skip** this step.
+如果您使用了[Huo's repo](https://github.com/huoguanying/SeabedObjects-Ship-and-Airplane-dataset) 和[Valdenegro's repo](https://github.com/mvaldenegro/marine-debris-fls-datasets/releases/tag/watertank-v1.0)的原始数据集，请阅读这个准备步骤。请注意，如果您使用了这个仓库中准备好的数据集，仅需要解压data文件夹下的所有 `.rar` 文件，然后直接**跳过**这个步骤。
 
-Firstly, Download datasets from [Huo's repo](https://github.com/huoguanying/SeabedObjects-Ship-and-Airplane-dataset) and [Valdenegro's repo](https://github.com/mvaldenegro/marine-debris-fls-datasets/releases/tag/watertank-v1.0) first, and adjust their file structure to:
+首先，从[Huo's repo](https://github.com/huoguanying/SeabedObjects-Ship-and-Airplane-dataset) 和[Valdenegro's repo](https://github.com/mvaldenegro/marine-debris-fls-datasets/releases/tag/watertank-v1.0)下载数据集，并把原始文件的结构调整到下面这样：
 
 ```
 data
@@ -82,7 +82,7 @@ data
     └── ...
 ```
 
-Secondly, run following codes to generate data direction-label list (train.txt) and 10-trail 5-fold cross-validation index list (kfold_train.txt, kfold_val.txt).
+然后，运行下面的命令来生成 路径-标签 列表（train.txt）和十次五折交叉验证的序号列表（kfold_train.txt, kfold_val.txt）。
 
 ```shell
 # generate data direction-label list, use KLSG dataset as an example 
@@ -92,7 +92,7 @@ python generate_dir_lbl_list.py --dataset KLSG
 python generate_kfold_idx_list.py --dataset KLSG
 ```
 
-Now, you might get a data file structure like this:
+现在，你应该得到了这样的文件结构：
 
 ```
 data
@@ -115,9 +115,9 @@ data
     └── ...
 ```
 
-### Training
+### 训练
 
-For training BETL, here is an example for quick start,
+要训练BETL，这里是一个快速开始的命令：
 
 ```shell
 # Demo: training on KLSG
@@ -125,7 +125,7 @@ cd ./code/
 python betl.py --dataset KLSG
 ```
 
-Here are explanations of some important args,
+这里是一些重要参数的解释：
 
 ```
 --dataset:      "the name of dataset, can be KLSG or FLSMDD, default is KLSG"
@@ -137,7 +137,7 @@ Here are explanations of some important args,
 --save_models:  "if you want to save the models, default is False"
 ```
 
-If you want to train BETL via a 10-trail 5-fold cross-validation scheme, run:
+通过下面的命令来对BETL进行十次五折交叉验证训练：
 
 ```shell
 # Demo: training on KLSG, using resnet18 as backbone
@@ -145,9 +145,9 @@ cd ./tool/
 ./auto_run.sh ../code/betl.py KLSG resnet18
 ```
 
-### Analyze Results
+### 结果分析
 
-After training BETL via a 10-trail 5-fold cross-validation scheme, by default, you will get y_hat, y_true, and logits results in `"/output/results/{dataset}/{method}/{backbone}/"`, e.g., `"/output/results/KLSG/betl/resnet18/y_hat.txt"`. Then, you can get Gmean, Macro-F1, confusion matrix, and Precision-Recall curves results through:
+在通过十次五折交叉验证训练完BETL之后，您会得到y_hat, y_true和logits结果，默认存放在`"/output/results/{dataset}/{method}/{backbone}/"`路径下，例如，`"/output/results/KLSG/betl/resnet18/y_hat.txt"`。然后，您可以使用下面的命令来得到Gmean、Macro-F1、混淆矩阵和P-R曲线结果：
 
 ```shell
 # Demo: analyzing on KLSG, using resnet18 as backbone
@@ -155,7 +155,7 @@ cd ./code/
 python analyse_result.py --dataset KLSG --method betl --backbone resnet18 --get_conf_matrix True --get_pr True
 ```
 
-Here are explanations of some important args,
+这里是一些重要参数的解释：
 
 ```
 --dataset:           "the name of dataset, can be KLSG or FLSMDD, default is KLSG"
@@ -172,7 +172,7 @@ Here are explanations of some important args,
 
 ##  Cite
 
-If you find this code useful in your research, please consider citing us:
+如果您觉得这份代码对您的研究有帮助，请考虑引用我们：
 
 ```
 @article{jiao2022sonar,
