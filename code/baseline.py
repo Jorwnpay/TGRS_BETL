@@ -96,5 +96,8 @@ if __name__ == '__main__':
 
     # save models
     if args.save_models in ['True', 'true']:
-        model_dir = os.path.join(curr_dir, f'../output/model/KLSG/p{p_v}_k{k_v}_{backbone}_baseline.pth')
+        model_folder = os.path.join(curr_dir, f'../output/model/{dataset}')
+        if not os.path.exists(model_folder):
+            os.makedirs(model_folder)
+        model_dir = os.path.join(model_folder, f'p{p_v}_k{k_v}_{backbone}_baseline.pth')
         torch.save(model.state_dict(), model_dir)
