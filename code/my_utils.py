@@ -620,7 +620,7 @@ def read_result_from_file(file_dir, p, k, if_get_logits=False):
         logits_line = None
         for i in range(len(logits_lines)):
             if logits_lines[i][0] == '#':
-                str_cuts = y_true_lines[i].rstrip().split('-')
+                str_cuts = logits_lines[i].rstrip().split('-')
                 p_read = int(str_cuts[0][2:])
                 k_read = int(str_cuts[1][1:])
                 if p_read == p and k_read == k:
