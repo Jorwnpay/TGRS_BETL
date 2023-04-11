@@ -127,7 +127,7 @@ if __name__ == '__main__':
     # save results by weight_averaging after pruning
     if args.save_results in ['True', 'true']:
         _, y_hat, y_true, logits = evaluate_gmean_optional(val_iter, model, saved_fcs, 'weight_averaging', device=device, if_get_logits=True)
-        save_dir = os.path.join(curr_dir, '../output/result', dataset, f'betl', backbone)
+        save_dir = os.path.join(curr_dir, '../output/result', dataset, 'betl', backbone)
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
         write_result_to_file(save_dir, y_hat, y_true, logits, p=p_v, k=k_v)
